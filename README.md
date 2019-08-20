@@ -6,13 +6,14 @@ This is what the model uses & what it does.
 
 ## Getting Started
 
-Create a conda environment using the conda config file `environment.yml` or 
+Create a conda environment using the conda config file `environment.yml` or
 the pip `requirements.txt` file.
 The conda config file works only on the OS it was generated on (MacOS for me).
 
 ```bash
 conda create -f environment.yml
 ```
+
 Install all dependencies using `conda install`.
 
 ```bash
@@ -23,7 +24,8 @@ Add your datasets into `datasets/`.
 
 ### Training
 
-Start the `visdom` server.  
+Start the `visdom` server.
+
 ```bash
 visdom
 ```
