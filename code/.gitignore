@@ -125,3 +125,6 @@ dmypy.json
 dataset/
 
 datasets/
+
+# Google cloud credentials
+dl-for-blockchain-*.json
