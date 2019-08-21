@@ -1,14 +1,9 @@
-# My cool new model
+# Detecting fraud Ethereum smart contracts using Machine Learning
 
-## Abstract
+## Setting Up
 
-This is what the model uses & what it does.
-
-## Getting Started
-
-Create a conda environment using the conda config file `environment.yml` or
-the pip `requirements.txt` file.
-The conda config file works only on the OS it was generated on (MacOS for me).
+Create a conda environment using the conda config file `environment.yml`.
+conda config files work only on the OS they are generated on (Linux64 for Me).
 
 ```bash
 conda create -f environment.yml
@@ -20,34 +15,20 @@ Install all dependencies using `conda install`.
 cd name-of-model
 ```
 
-Add your datasets into `datasets/`.
+Download the dataset from [this link](https://) into `dataset/`.
 
-### Training
+## Training
 
-Start the `visdom` server.
-
-```bash
-visdom
-```
-
-Run the project.  
+Run the project using
 
 ```bash
 python main.py --phase train
 ```
 
-### Testing
+## Testing
+
+Test the project using
 
 ```bash
-python main.py --phase test --in_path xxx/xxx.jpg  --out_path ./results/
+python main.py --phase test
 ```
-
-## Results
-
-This is what my cool new model achieved in testing.
-Here are some graphs and tables.
-
-## References
-
-* [Some awesome paper](www.github.com/rshwndsz)
-* [Great blog](www.github.com/rshwndsz)
