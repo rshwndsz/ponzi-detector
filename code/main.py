@@ -3,9 +3,9 @@ import argparse
 import logging
 import coloredlogs
 
-from config import (config as cfg,
-                    architecture as arch,
-                    data_loaders as dl)
+from code.config import (config as cfg,
+                         architecture as arch,
+                         data_loaders as dl)
 
 # Setup colorful logging
 logger = logging.getLogger(__name__)
