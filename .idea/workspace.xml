@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9ab3ec5-b92b-4040-b7a7-0ba87d26af9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dl-for-blockchain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dl-for-blockchain.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/code/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Russel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Russel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/notebooks/visualize.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/notebooks/visualize.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,53 +28,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/main.py">
+        <entry file="file://$PROJECT_DIR$/code/data/mining.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
-                <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/.gitignore">
+        <entry file="file://$PROJECT_DIR$/code/data/cleaning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="129" column="24" lean-forward="true" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/models/SampleNet.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/config/data_loaders.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/config/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/config/architecture.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="374">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -93,6 +60,8 @@
         <option value="$PROJECT_DIR$/code/config/config.py" />
         <option value="$PROJECT_DIR$/code/main.py" />
         <option value="$PROJECT_DIR$/code/.gitignore" />
+        <option value="$PROJECT_DIR$/code/data/mining.py" />
+        <option value="$PROJECT_DIR$/code/data/cleaning.py" />
       </list>
     </option>
   </component>
@@ -107,8 +76,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="712" />
   </component>
@@ -196,6 +165,32 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true" show_console_on_std_err="true" show_console_on_std_out="true">
+      <module name="dl-for-blockchain" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="ETHERSCAN_API_KEY" value="16238JDDCF47MSA3TBPE3GAZTVAHRUUH6S" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="$PROJECT_DIR$/code/dl-for-blockchain-1f8fa2978dfe.json" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/unet/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/main.py" />
+      <option name="PARAMETERS" value="--phase train" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -207,18 +202,17 @@
       <option name="presentableId" value="Default" />
       <updated>1566377879043</updated>
       <workItem from="1566377881144" duration="354000" />
-      <workItem from="1566399731472" duration="120000" />
+      <workItem from="1566399731472" duration="2863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="474000" />
+    <option name="totallyTimeSpent" value="3217000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="712" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1280" height="712" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22132471" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332796" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -237,8 +231,8 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" show_stripe_button="false" />
-      <window_info anchor="right" id="Python Console" order="5" weight="0.32956383" />
-      <window_info active="true" anchor="right" id="Terminal" order="6" visible="true" weight="0.30936995" />
+      <window_info anchor="right" id="Python Console" order="5" weight="0.75444263" />
+      <window_info active="true" anchor="right" id="Terminal" order="6" visible="true" weight="0.52584815" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +241,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -266,7 +267,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/config/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="238">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -281,10 +282,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/.gitignore">
+    <entry file="file://$PROJECT_DIR$/code/environment.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/environment_macosx.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="129" column="24" lean-forward="true" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
+        <state relative-caret-position="-158" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/data/mining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/data/cleaning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
