@@ -41,8 +41,31 @@ def get_all_addresses(limit=1000):
         query,
         location="US"
     )
-    for row in query_job:
-        print(row[0], row[1])
+    return query_job
+
+
+def get_bytecode_from_address(address):
+    """
+        Get all addresses from Google BigQuery
+
+        Query bigquery-public-data:crypto_ethereum.transactions
+        for bytecode and addresses
+        See: https://googleapis.github.io/google-cloud-python/latest/
+        """
+    client = bigquery.Client.from_service_account_json(
+        "..secrets/dl-for-blockchain-1f8fa2978dfe.json"
+    )
+    assert client is not None
+    query = (
+        "SELECT bytecode "
+        "FROM `bigquery-public-data.crypto_ethereum.contracts` "
+        f"WHERE address={address}"
+    )
+    query_job = client.query(
+        query,
+        location="US"
+    )
+    return query_job
 
 
 def get_etherscan_api_key(path='../secrets/etherscan_api_key.txt'):
