@@ -2,8 +2,6 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.autograd import Variable
 
-from code.config import architecture as arch
-
 
 class ConvDenoisingAutoEncoder(nn.Module):
     def __init__(self, input_size, output_size, stride):
@@ -27,7 +25,7 @@ class ConvDenoisingAutoEncoder(nn.Module):
         ])
 
         self.criterion = nn.MSELoss()
-        self.optimizer = optim.SGD(self.parameters(), lr=arch.lr)
+        self.optimizer = optim.SGD(self.parameters(), lr=0.01)
 
     def forward(self, x):
         # Train each autoencoder individually
