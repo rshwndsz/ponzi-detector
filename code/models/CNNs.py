@@ -43,13 +43,13 @@ class _ConvBNReluDw(nn.Module):
 class ConvNet(nn.Module):
     def __init__(self, input_size, output_size):
         super(ConvNet, self).__init__()
-        self.enc1 = _ConvBNReluUp(3, 32)
+        self.enc1 = _ConvBNReluUp(input_size, 32)
         self.enc2 = _ConvBNReluUp(32, 64)
         self.enc3 = _ConvBNReluUp(64, 128)
         self.dec1 = _ConvBNReluDw(128, 64, 32)
         self.dec2 = _ConvBNReluDw(32, 16, 8)
 
-        self.fc = nn.Linear(8*8, 16)
+        self.fc = nn.Linear(8*8, output_size)
 
     def forward(self, x):
         x = self.enc1(x)
@@ -65,7 +65,8 @@ class PonziNet(nn.Module):
     def __init__(self):
         super(PonziNet, self).__init__()
         # Load conv_net
-        self.conv_net = torch.load(os.path.join(cfg.model_path_root, 'conv_net', 'best_model'))
+        checkpoint = torch.load(os.path.join(cfg.model_path_root, 'conv_net', 'best_model.pth'))
+        self.conv_net.load(checkpoint['conv_net_state_dict'])
         # Freeze conv_net
         for param in self.conv_net.parameters():
             param.requires_grad = False
