@@ -127,5 +127,4 @@ dataset/
 datasets/
 
 # Secrets
-etherscan_api_key.txt
-dl-for-blockchain-*.json
+secrets/
