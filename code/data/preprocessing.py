@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from nltk.metrics import edit_distance
 
 
 def bytecode_to_image(bytecode):
@@ -30,9 +31,11 @@ def tokens_to_onehot(tokens):
                         ]
     token_strings = list(tokens.keys())
     one_hot = np.zeros((16, 1))
-    for i, token in enumerate(reference_tokens):
-        if token in token_strings:
-            one_hot[i] = 1
+    for i, ref_token in enumerate(reference_tokens):
+        for dirty_token in tokens:
+            if edit_distance(dirty_token, ref_token) <= 2:
+                one_hot[i] = 1
+                break
     return one_hot
 
 
