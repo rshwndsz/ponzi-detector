@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9ab3ec5-b92b-4040-b7a7-0ba87d26af9b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Russel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Russel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dl-for-blockchain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dl-for-blockchain.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/data/cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/data/cleaning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/environment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/code/environment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/data/mining.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/data/mining.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,12 +31,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/data/mining.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="299">
+              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -42,13 +44,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/data/cleaning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="1944">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,9 +79,10 @@
         <option value="$PROJECT_DIR$/code/config/architecture.py" />
         <option value="$PROJECT_DIR$/code/config/config.py" />
         <option value="$PROJECT_DIR$/code/main.py" />
+        <option value="$PROJECT_DIR$/code/secrets/etherscan_api_key.txt" />
         <option value="$PROJECT_DIR$/code/.gitignore" />
-        <option value="$PROJECT_DIR$/code/data/mining.py" />
         <option value="$PROJECT_DIR$/code/data/cleaning.py" />
+        <option value="$PROJECT_DIR$/code/data/mining.py" />
       </list>
     </option>
   </component>
@@ -82,11 +97,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="650" />
-    <option name="y" value="27" />
-    <option name="width" value="1270" />
-    <option name="height" value="977" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="638" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -96,7 +109,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,25 +155,34 @@
               <item name="dl-for-blockchain" type="b2602c69:ProjectViewProjectNode" />
               <item name="dl-for-blockchain" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="secrets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dl-for-blockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dl-for-blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/code/secrets" />
       <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
@@ -177,7 +198,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.cleaning">
+    <configuration name="cleaning" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="dl-for-blockchain" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/data/cleaning.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true" show_console_on_std_err="true" show_console_on_std_out="true">
       <module name="dl-for-blockchain" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,7 +228,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="ETHERSCAN_API_KEY" value="16238JDDCF47MSA3TBPE3GAZTVAHRUUH6S" />
-        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="$PROJECT_DIR$/code/dl-for-blockchain-1f8fa2978dfe.json" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="$PROJECT_DIR$/code/secrets/dl-for-blockchain-1f8fa2978dfe.json" />
       </envs>
       <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/unet/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
@@ -202,6 +245,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mining" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="dl-for-blockchain" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="ETHERSCAN_API_KEY" value="16238JDDCF47MSA3TBPE3GAZTVAHRUUH6S" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="$PROJECT_DIR$/code/secrets/dl-for-blockchain-1f8fa2978dfe.json" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/data/mining.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.cleaning" />
+      <item itemvalue="Python.mining" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.cleaning" />
+        <item itemvalue="Python.mining" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -215,22 +293,24 @@
       <updated>1566377879043</updated>
       <workItem from="1566377881144" duration="354000" />
       <workItem from="1566399731472" duration="2863000" />
+      <workItem from="1566701371485" duration="106000" />
+      <workItem from="1566701499581" duration="6754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5048000" />
+    <option name="totallyTimeSpent" value="11908000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="650" y="27" width="1270" height="977" extended-state="4" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4030303" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332796" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -242,35 +322,23 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" show_stripe_button="false" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32956383" />
       <window_info anchor="right" id="Database" order="4" show_stripe_button="false" />
-      <window_info anchor="right" id="Terminal" order="5" weight="0.6691569" />
-      <window_info anchor="right" id="Python Console" order="6" weight="0.75400215" />
+      <window_info anchor="right" id="Terminal" order="5" weight="0.6526656" />
+      <window_info anchor="right" id="Python Console" order="6" weight="0.72213244" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/dl_for_blockchain$cleaning.coverage" NAME="cleaning Coverage Results" MODIFIED="1566712085582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code/data" />
+    <SUITE FILE_PATH="coverage/dl_for_blockchain$main.coverage" NAME="main Coverage Results" MODIFIED="1566702577907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/dl_for_blockchain$mining.coverage" NAME="mining Coverage Results" MODIFIED="1566711656848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code/data" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/code/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/models/SampleNet.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -312,22 +380,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/data/mining.py">
+    <entry file="file://$PROJECT_DIR$/code/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="306">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/secrets/etherscan_api_key.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/data/cleaning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="1944">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/data/mining.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
