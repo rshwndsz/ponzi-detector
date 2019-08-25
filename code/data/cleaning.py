@@ -101,6 +101,7 @@ pipeline = CleaningPipeline([camel_case_split,
                              snake_case_split,
                              remove_common_words,
                              remove_numbers_and_symbols,
+                             stemming,
                              ])
 
 
