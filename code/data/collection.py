@@ -10,6 +10,7 @@ from code.config import config as cfg
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler())
 
 
 def collect_verified_contracts():
@@ -35,27 +36,24 @@ def collect_verified_contracts():
     # Get all verified contracts
     verified_contracts = pd.DataFrame(columns=['address', 'bytecode', 'tokens'])
 
-    logger.debug('Getting all verified contracts')
+    total = 0
     for i, row in ethereum_contracts.iterrows():
+        if total > 1000:
+            break
         if mining.sourcecode_exists(row['address']):
             logger.debug(f"{i}: Adding {row['address']}")
             verified_contracts['address'] = row['address']
             verified_contracts['bytecode'] = row['bytecode']
+            total += 1
 
-    # Save before proceeding
-    verified_contracts.to_csv(os.path.join(cfg.dataset_root, 'verified_contracts.csv'),
-                              header=True,
-                              index=False)
+    logger.debug(verified_contracts.head())
 
     # Get tokens from ABI for each verified contract
-    df = pd.DataFrame()
     for i, address in verified_contracts.address.iterrows():
-        logger.debug(f'{i}')
-        df = dict(Counter(cleaning.pipeline.clean(
-            mining.get_all_names_from_address(address)
-        )))
-    # Update column
-    verified_contracts['tokens'] = df
+        verified_contracts['tokens'].append(
+            dict(Counter(cleaning.pipeline.clean(
+                 mining.get_all_names_from_address(address))
+            )))
 
     # Save
     verified_contracts.to_csv(os.path.join(cfg.dataset_root, 'verified_contracts.csv'),
