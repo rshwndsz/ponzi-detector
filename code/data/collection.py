@@ -30,30 +30,35 @@ def collect_verified_contracts():
         ethereum_contracts.append(pd.read_csv(dataset_path, index_col=None, header=0))
     ethereum_contracts = pd.concat(ethereum_contracts, axis=0, ignore_index=True)
     ethereum_contracts.columns = ['address', 'bytecode']
-
     logger.debug(ethereum_contracts.head())
 
-    # Get all verified contracts
     verified_contracts = pd.DataFrame(columns=['address', 'bytecode', 'tokens'])
 
+    # Get all verified contracts
     total = 0
+    addresses = []
+    bytecodes = []
     for i, row in ethereum_contracts.iterrows():
-        if total > 1000:
+        if total > 500:
             break
         if mining.sourcecode_exists(row['address']):
-            logger.debug(f"{i}: Adding {row['address']}")
-            verified_contracts['address'] = row['address']
-            verified_contracts['bytecode'] = row['bytecode']
+            logger.debug(f"Now having {total} rows: Adding {row['address']}")
+            addresses.append(row['address'])
+            bytecodes.append(row['bytecode'])
             total += 1
-
+    verified_contracts['address'] = addresses
+    verified_contracts['bytecode'] = bytecodes
     logger.debug(verified_contracts.head())
 
     # Get tokens from ABI for each verified contract
-    for i, address in verified_contracts.address.iterrows():
-        verified_contracts['tokens'].append(
+    tokens = []
+    for i, address in enumerate(verified_contracts.address):
+        tokens.append(
             dict(Counter(cleaning.pipeline.clean(
                  mining.get_all_names_from_address(address))
             )))
+    verified_contracts['tokens'] = tokens
+    logger.debug(verified_contracts.head())
 
     # Save
     verified_contracts.to_csv(os.path.join(cfg.dataset_root, 'verified_contracts.csv'),
