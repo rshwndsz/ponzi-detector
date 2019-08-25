@@ -1,14 +1,16 @@
-import numpy as np
-import torch
-import torch.nn as nn
 from torch.utils import data
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import logging
 
 from code.data.preprocessing import preprocess
 from code.data.preprocessing import bytecode_to_image
-
 from code.data import mining
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler())
 
 
 class BytecodeTokenDataset(data.Dataset):
@@ -52,38 +54,8 @@ byt_token_train, byt_token_val = train_test_split(byt_token_trainval,
                                                   random_state=42)
 
 # BytecodePonziDataset
-byt_ponzi_cols = ['Id',
-                  'Name',
-                  'address',
-                  'R1',
-                  'R2',
-                  'R3',
-                  'R4',
-                  'is_ponzi',
-                  'Owner',
-                  'Type',
-                  'Owner holds back some money',
-                  'Unchecked Send',
-                  'Owner functions to withdraw',
-                  'Owner functions to change parameters'	
-                  'Return fees if low',
-                  'Similar contracts',
-                  'Certified date',
-                  'date',
-                  'Notes']
 # Read raw ponzi data
-byt_ponzi = pd.read_csv('../dataset/Ponzi.csv', columns=byt_ponzi_cols)
-
-# Mine bytecodes from BigQuery to add to raw ponzi data
-bytecodes = pd.DataFrame()
-for address in byt_ponzi.address:
-    bytecodes.append(mining.get_sourcecode_from_address(address))
-byt_ponzi['bytecode'] = bytecodes
-
-# Select just address, ponzi_status, bytecode and save to new CSV
-byt_token[['address', 'is_ponzi', 'bytecode']].to_csv('../dataset/cleaned_ponzi',
-                                                      header=True,
-                                                      index=False)
+byt_ponzi = pd.read_csv('../dataset/Ponzi.csv')
 # Split Ponzi set to train/val/test
 byt_ponzi_trainval, byt_ponzi_test = train_test_split(byt_ponzi,
                                                       test_size=0.05,
@@ -91,3 +63,51 @@ byt_ponzi_trainval, byt_ponzi_test = train_test_split(byt_ponzi,
 byt_ponzi_train, byt_ponzi_val = train_test_split(byt_ponzi_trainval,
                                                   test_size=0.05,
                                                   random_state=42)
+
+if __name__ == '__main__':
+    import os
+    if os.path.exists('../dataset/cleaned_ponzi.csv'):
+        logger.warning('Ponzi set has been cleaned and bytecode added.')
+    else:
+        # BytecodePonziDataset
+        byt_ponzi_cols = ['Id',
+                          'Id2',
+                          'Name',
+                          'address',
+                          'R1',
+                          'R2',
+                          'R3',
+                          'R4',
+                          'is_ponzi',
+                          'Owner',
+                          'Type',
+                          'Owner holds back some money',
+                          'Unchecked Send',
+                          'Owner functions to withdraw',
+                          'Owner functions to change parameters'
+                          'Return fees if low',
+                          'Similar contracts',
+                          'Certified date',
+                          'date',
+                          'Notes']
+        # Read raw ponzi data
+        byt_ponzi = pd.read_csv('../dataset/Ponzi.csv', names=byt_ponzi_cols)
+        logger.debug(byt_ponzi.head())
+
+        # Mine bytecodes from BigQuery to add to raw ponzi data
+        logger.info('Adding bytecodes to ponzi data...')
+        bytecodes = []
+        query_job = mining.get_bytecode_from_addresses(set(byt_ponzi['address']))
+
+        for row in query_job:
+            bytecodes.append(row[0])
+
+        byt_ponzi['bytecode'] = pd.DataFrame(bytecodes)
+
+        byt_ponzi['is_ponzi'] = pd.DataFrame([1]*len(byt_ponzi))
+
+        # Select just address, ponzi_status, bytecode and save to new CSV
+        byt_ponzi[['address', 'is_ponzi', 'bytecode']].to_csv('../dataset/cleaned_ponzi.csv',
+                                                              header=True,
+                                                              index=False)
+        logger.info('Ponzi set cleaned!')

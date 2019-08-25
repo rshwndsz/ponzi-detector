@@ -6,6 +6,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler())
 
 
 def test_client_creation():
@@ -28,7 +29,7 @@ def get_all_addresses(limit=1000):
     See: https://googleapis.github.io/google-cloud-python/latest/
     """
     client = bigquery.Client.from_service_account_json(
-        "..secrets/dl-for-blockchain-1f8fa2978dfe.json"
+        "../secrets/dl-for-blockchain-1f8fa2978dfe.json"
     )
     assert client is not None
     query = (
@@ -44,22 +45,21 @@ def get_all_addresses(limit=1000):
     return query_job
 
 
-def get_bytecode_from_address(address):
+def get_bytecode_from_addresses(addresses):
     """
         Get all addresses from Google BigQuery
-
         Query bigquery-public-data:crypto_ethereum.transactions
         for bytecode and addresses
         See: https://googleapis.github.io/google-cloud-python/latest/
         """
     client = bigquery.Client.from_service_account_json(
-        "..secrets/dl-for-blockchain-1f8fa2978dfe.json"
+        "../secrets/My Project 14448-c3df0e5d3ec5.json"
     )
     assert client is not None
     query = (
         "SELECT bytecode "
         "FROM `bigquery-public-data.crypto_ethereum.contracts` "
-        f"WHERE address={address}"
+        f"WHERE address in {tuple(addresses)}"
     )
     query_job = client.query(
         query,
