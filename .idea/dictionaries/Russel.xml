@@ -1,10 +1,15 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Russel">
     <words>
+      <w>autoencoder</w>
+      <w>autoencoders</w>
       <w>bigquery</w>
       <w>blockchain</w>
       <w>bytecodes</w>
+      <w>conv</w>
+      <w>convolutional</w>
       <w>crowdsale</w>
+      <w>denoising</w>
       <w>ethereum</w>
       <w>etherscan</w>
       <w>ndarray</w>
@@ -12,6 +17,11 @@
       <w>ponzi</w>
       <w>preprocessing</w>
       <w>punkt</w>
+      <w>relu</w>
+      <w>testloader</w>
+      <w>trainloader</w>
+      <w>trainval</w>
+      <w>valloader</w>
       <w>yajahtsu</w>
     </words>
   </dictionary>
