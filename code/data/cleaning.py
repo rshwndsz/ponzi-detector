@@ -2,6 +2,11 @@ import re
 from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
 
 try:
     stop_words = set(stopwords.words('english'))
@@ -24,7 +29,7 @@ class CleaningPipeline:
     def clean(self, string):
         self.result = self.func_list[0](string)
         for func in self.func_list[1:]:
-            print(f'{func.__name__}({self.result})')
+            logger.info(f'CleaningPipeline: {func.__name__}({self.result})')
             self.result = func(self.result)
         return self.result
 

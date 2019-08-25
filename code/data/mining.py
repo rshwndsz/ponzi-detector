@@ -68,9 +68,9 @@ def get_sourcecode_from_address(address):
         logger.warning('Empty Response. Try again later.')
         return None
     else:
-        if not sourcecode['SourceCode']:
+        if not sourcecode[0]['SourceCode']:
             return None
-        if sourcecode['ABI'] == 'Contract source code not verified':
+        if sourcecode[0]['ABI'] == 'Contract source code not verified':
             return None
         return sourcecode
 
@@ -91,6 +91,13 @@ def get_abi_from_address(address):
         if not abstract_bi:
             return None
         return abstract_bi
+
+
+def sourcecode_exists(address):
+    request_result = get_sourcecode_from_address(address)
+    if request_result:
+        return True
+    return False
 
 
 def get_all_names_from_address(address):
@@ -135,3 +142,9 @@ if __name__ == '__main__':
     # Sanity Checks
     names = get_all_names_from_address('0x06012c8cf97bead5deae237070f9587f8e7a266d')
     print(names, len(names))
+
+    from collections import Counter
+    from code.data.cleaning import pipeline
+    cleaned_names = pipeline.clean(names)
+    hash_map = dict(Counter(cleaned_names))
+    print(hash_map)
