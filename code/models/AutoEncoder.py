@@ -9,7 +9,7 @@ class ConvDenoisingAutoEncoder(nn.Module):
     def __init__(self, input_size, output_size, stride):
         super(ConvDenoisingAutoEncoder, self).__init__()
 
-        self.forward = nn.ModuleList([
+        self.encode = nn.ModuleList([
             nn.Conv2d(input_size,
                       output_size,
                       kernel_size=2,
@@ -17,7 +17,7 @@ class ConvDenoisingAutoEncoder(nn.Module):
                       padding=0),
             nn.ReLU()
         ])
-        self.backward = nn.ModuleList([
+        self.decode = nn.ModuleList([
             nn.ConvTranspose2d(output_size,
                                input_size,
                                kernel_size=2,
@@ -34,10 +34,10 @@ class ConvDenoisingAutoEncoder(nn.Module):
         x = x.detach()
         # Add noise, but use the original loss-less input as the target.
         x_noisy = x * (Variable(x.data.new(x.size()).normal_(0, 0.1)) > -.1).type_as(x)
-        y = self.forward(x_noisy)
+        y = self.encode(x_noisy)
 
         if self.training:
-            x_reconstruct = self.backward(y)
+            x_reconstruct = self.decode(y)
             loss = self.criterion(x_reconstruct, Variable(x.data, requires_grad=False))
             self.optimizer.zero_grad()
             loss.backward()
@@ -46,7 +46,7 @@ class ConvDenoisingAutoEncoder(nn.Module):
         return y.detach()
 
     def reconstruct(self, x):
-        return self.backward(x)
+        return self.decode(x)
 
 
 class StackedAutoEncoder(nn.Module):
