@@ -1,6 +1,9 @@
-# from data import data_set_name
+from code.data import representation
 
+byt_token_trainloader = representation.byt_ponzi_trainloader
+byt_token_valloader = representation.byt_ponzi_valloader
+byt_token_testloader = representation.byt_ponzi_testloader
 
-# train_loader = data_set_name.train_loader
-# val_loader = data_set_name.val_loader
-# test_loader = data_set_name.val_loader
+byt_ponzi_trainloader = representation.byt_token_trainloader
+byt_ponzi_valloader = representation.byt_token_valloader
+byt_ponzi_testloader = representation.byt_token_testloader

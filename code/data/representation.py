@@ -52,6 +52,16 @@ byt_token_trainval, byt_token_test = train_test_split(byt_token,
 byt_token_train, byt_token_val = train_test_split(byt_token_trainval,
                                                   test_size=0.1,
                                                   random_state=42)
+# DataLoaders
+byt_token_trainloader = data.DataLoader(byt_token_train,
+                                        batch_size=2,
+                                        shuffle=True,)
+byt_token_valloader = data.DataLoader(byt_token_val,
+                                      batch_size=2,
+                                      shuffle=True)
+byt_token_testloader = data.DataLoader(byt_token_test,
+                                       batch_size=2,
+                                       shuffle=False)
 
 # BytecodePonziDataset
 # Read raw ponzi data
@@ -63,6 +73,16 @@ byt_ponzi_trainval, byt_ponzi_test = train_test_split(byt_ponzi,
 byt_ponzi_train, byt_ponzi_val = train_test_split(byt_ponzi_trainval,
                                                   test_size=0.05,
                                                   random_state=42)
+# DataLoaders
+byt_ponzi_trainloader = data.DataLoader(byt_ponzi_train,
+                                        batch_size=2,
+                                        shuffle=True,)
+byt_ponzi_valloader = data.DataLoader(byt_ponzi_val,
+                                      batch_size=2,
+                                      shuffle=True)
+byt_ponzi_testloader = data.DataLoader(byt_ponzi_test,
+                                       batch_size=2,
+                                       shuffle=False)
 
 if __name__ == '__main__':
     import os
