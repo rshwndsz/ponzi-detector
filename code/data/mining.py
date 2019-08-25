@@ -24,7 +24,7 @@ def get_all_addresses(limit=1000):
     See: https://googleapis.github.io/google-cloud-python/latest/
     """
     client = bigquery.Client.from_service_account_json(
-        "../dl-for-blockchain-1f8fa2978dfe.json"
+        "..secrets/dl-for-blockchain-1f8fa2978dfe.json"
     )
     assert client is not None
     query = (
@@ -41,6 +41,13 @@ def get_all_addresses(limit=1000):
         print(row[0], row[1])
 
 
+def get_etherscan_api_key(path='../secrets/etherscan_api_key.txt'):
+    api_key = ''
+    with open(path, 'r') as f:
+        api_key = f.readline().strip()
+    return api_key
+
+
 def get_sourcecode_from_address(address):
     """
     Return sourcecode for address
@@ -49,7 +56,7 @@ def get_sourcecode_from_address(address):
          https://cloud.google.com/docs/authentication/getting-started
          https://sebs.github.io/etherscan-api/
     """
-    api_key = os.environ['ETHERSCAN_API_KEY']
+    api_key = get_etherscan_api_key()
     api = Contract(address=address,
                    api_key=api_key)
     sourcecode = api.get_sourcecode()
@@ -60,7 +67,7 @@ def get_abi_from_address(address):
     """
     Return ABI for address
     """
-    api_key = os.environ['ETHERSCAN_API_KEY']
+    api_key = get_etherscan_api_key()
     api = Contract(address=address,
                    api_key=api_key)
     return api.get_abi()
@@ -78,7 +85,7 @@ def get_all_names_from_address(address):
     result = []
     for x in abi:
         try:
-            names.append(x['name'])
+            result.append(x['name'])
         except KeyError:
             pass
         try:
@@ -88,7 +95,7 @@ def get_all_names_from_address(address):
         else:
             for ip in inputs:
                 try:
-                    names.append(ip['name'])
+                    result.append(ip['name'])
                 except KeyError:
                     pass
         try:
@@ -98,7 +105,7 @@ def get_all_names_from_address(address):
         else:
             for op in outputs:
                 try:
-                    names.append(op['name'])
+                    result.append(op['name'])
                 except KeyError:
                     pass
     return result
