@@ -16,7 +16,7 @@ min_val_loss = 1000
 
 
 # Data-specific
-project_root = os.getcwd()
-dataset_root = os.path.join(project_root, 'dataset', 'dataset_name')
+project_root = '/Users/Russel/myProjects/dl-for-blockchain/code/'
+dataset_root = os.path.join(project_root, 'dataset')
 model_path = os.path.join(project_root, 'checkpoints', 'model_best.pth')
 results_dir = os.path.join(project_root, 'results')
