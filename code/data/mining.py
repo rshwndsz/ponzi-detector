@@ -2,6 +2,10 @@ from etherscan.contracts import Contract
 from google.cloud import bigquery
 import os
 import json
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 
 def test_client_creation():
@@ -42,7 +46,6 @@ def get_all_addresses(limit=1000):
 
 
 def get_etherscan_api_key(path='../secrets/etherscan_api_key.txt'):
-    api_key = ''
     with open(path, 'r') as f:
         api_key = f.readline().strip()
     return api_key
@@ -59,8 +62,17 @@ def get_sourcecode_from_address(address):
     api_key = get_etherscan_api_key()
     api = Contract(address=address,
                    api_key=api_key)
-    sourcecode = api.get_sourcecode()
-    return sourcecode
+    try:
+        sourcecode = api.get_sourcecode()
+    except:
+        logger.warning('Empty Response. Try again later.')
+        return None
+    else:
+        if not sourcecode['SourceCode']:
+            return None
+        if sourcecode['ABI'] == 'Contract source code not verified':
+            return None
+        return sourcecode
 
 
 def get_abi_from_address(address):
@@ -70,7 +82,15 @@ def get_abi_from_address(address):
     api_key = get_etherscan_api_key()
     api = Contract(address=address,
                    api_key=api_key)
-    return api.get_abi()
+    try:
+        abstract_bi = api.get_abi()
+    except:
+        logger.warning('Empty Response. Try again later.')
+        return None
+    else:
+        if not abstract_bi:
+            return None
+        return abstract_bi
 
 
 def get_all_names_from_address(address):

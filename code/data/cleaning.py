@@ -78,13 +78,8 @@ def snake_case_split(string_list):
     return result
 
 
-def remove_common_words(string):
-    if type(string) == list:
-        return filter(lambda w: w not in stop_words, string)
-    elif type(string) == str:
-        return filter(lambda w: w not in stop_words, string.split(' '))
-    else:
-        raise TypeError('Must be string or list')
+def remove_common_words(string_list):
+    return [w for w in string_list if w not in stop_words]
 
 
 def remove_numbers_and_symbols(string_list):
@@ -97,12 +92,15 @@ def stemming(string_list):
     return [ps.stem(i) for i in string_list]
 
 
+pipeline = CleaningPipeline([camel_case_split,
+                             snake_case_split,
+                             remove_common_words,
+                             remove_numbers_and_symbols,
+                             ])
+
+
 if __name__ == '__main__':
-    pipeline = CleaningPipeline([camel_case_split,
-                                 snake_case_split,
-                                 remove_common_words,
-                                 remove_numbers_and_symbols,
-                                 ])
+    # Sanity check
     from code.data.mining import get_all_names_from_address
     names = get_all_names_from_address('0x06012c8cf97bead5deae237070f9587f8e7a266d')
     print(pipeline.clean(names))
