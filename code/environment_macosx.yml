@@ -39,6 +39,7 @@ editdistance=0.5.3=pypi_0
 en-core-web-sm=2.1.0=pypi_0
 entrypoints=0.3=py36_0
 expat=2.2.6=h0a44026_0
+flake8=3.7.7=py36_0
 flaky=3.6.1=pypi_0
 flask=1.1.1=pypi_0
 flask-cors=3.0.8=pypi_0
@@ -58,6 +59,7 @@ h5py=2.9.0=pypi_0
 humanfriendly=4.18=py36_0
 icu=58.2=h4b95b61_1
 idna=2.8=py36_0
+ignite=0.2.0=py36_0
 imagesize=1.1.0=pypi_0
 importlib-metadata=0.19=pypi_0
 intel-openmp=2019.4=233
@@ -93,6 +95,7 @@ libtiff=4.0.10=hcb84e12_2
 llvm-openmp=4.0.1=hcfea43d_1
 markupsafe=1.1.1=py36h1de35cc_0
 matplotlib=3.1.0=py36h54f8f79_0
+mccabe=0.6.1=py36_1
 mistune=0.8.4=py36h1de35cc_0
 mkl=2019.4=233
 more-itertools=7.2.0=pypi_0
@@ -136,7 +139,9 @@ py=1.8.0=pypi_0
 py-etherscan-api=0.8.0=pypi_0
 pyasn1=0.4.6=py_0
 pyasn1-modules=0.2.6=py_0
+pycodestyle=2.5.0=py36_0
 pycparser=2.19=py36_0
+pyflakes=2.1.1=py36_0
 pygments=2.4.2=py_0
 pyopenssl=19.0.0=py36_0
 pyparsing=2.4.0=py_0

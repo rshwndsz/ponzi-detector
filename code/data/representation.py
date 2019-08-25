@@ -28,7 +28,7 @@ class BytecodeTokenDataset(data.Dataset):
 
 class BytecodePonziDataset(data.Dataset):
     def __init__(self, df):
-        result = pd.DataFrame(columns=['address', 'bytecode'])
+        result = pd.DataFrame(columns=['address', 'bytecode', 'is_ponzi'])
         for i, row in df.iterrows():
             result['bytecode'].append(bytecode_to_image(row['bytecode']))
         df = result
@@ -86,7 +86,7 @@ byt_ponzi_testloader = data.DataLoader(byt_ponzi_test,
 
 if __name__ == '__main__':
     import os
-    if os.path.exists('../dataset/cleaned_ponzi.csv'):
+    if not os.path.exists('../dataset/cleaned_ponzi.csv'):
         logger.warning('Ponzi set has been cleaned and bytecode added.')
     else:
         # BytecodePonziDataset
@@ -126,8 +126,15 @@ if __name__ == '__main__':
 
         byt_ponzi['is_ponzi'] = pd.DataFrame([1]*len(byt_ponzi))
 
+        # Add not ponzi data
+        extra_not_ponzi = pd.read_csv('../dataset/verified_contracts.csv')
+        df = extra_not_ponzi.sample(n=200)
+        df['is_ponzi'] = pd.DataFrame([0]*len(df))
+        byt_ponzi = pd.concat([byt_ponzi[['address', 'bytecode', 'is_ponzi']],
+                              df[['address', 'bytecode', 'is_ponzi']]])
+
         # Select just address, ponzi_status, bytecode and save to new CSV
-        byt_ponzi[['address', 'is_ponzi', 'bytecode']].to_csv('../dataset/cleaned_ponzi.csv',
+        byt_ponzi[['address', 'bytecode', 'is_ponzi']].to_csv('../dataset/cleaned_ponzi.csv',
                                                               header=True,
                                                               index=False)
         logger.info('Ponzi set cleaned!')
