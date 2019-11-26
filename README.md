@@ -1,5 +1,7 @@
 # Detecting fraud Ethereum smart contracts using Machine Learning
 
+This project is the result of a 48hr sprint to create a blockchain-based deep learning project.
+
 ## Setting Up
 
 Create a conda environment using the conda config file `environment.yml`.
@@ -15,7 +17,7 @@ Install all dependencies using `conda install`.
 cd name-of-model
 ```
 
-Download the dataset from [this link](https://) into `dataset/`.
+Download the dataset from [this link](https://https://drive.google.com/open?id=1sSb0i7lTPpmo2UAKEVfp1ZwCJYDl1wj5) into `dataset/`.
 
 ## Training
 
@@ -32,3 +34,6 @@ Test the project using
 ```bash
 python main.py --phase test
 ```
+
+Note:  
+Not all files may be up-to-date.
